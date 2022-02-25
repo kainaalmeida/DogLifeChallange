@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DogLifeChallange.Views.RegisterPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:DogLifeChallange.Controls"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    BackgroundColor="White">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="Roboto" />
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="FontFamily" Value="Roboto" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <Grid
+            Padding="20"
+            RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto"
+            RowSpacing="15">
+
+            <Image
+                Margin="0,0,0,20"
+                HeightRequest="150"
+                Source="register_image" />
+            <Image
+                Margin="0,0,0,20"
+                Aspect="AspectFit"
+                HeightRequest="50"
+                Source="ic_add"
+                TranslationY="25"
+                VerticalOptions="End" />
+
+            <StackLayout Grid.Row="1">
+                <Label Text="Name" />
+                <Entry Text="Kainã Almeida" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="2">
+                <Label Text="Email" />
+                <Entry Text="kainafa@hotmail.com" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="3">
+                <Label Text="Password" />
+                <Entry IsPassword="True" Text="Kainã Almeida" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="4">
+                <Label Text="Confirm Password" />
+                <Entry IsPassword="True" Text="Kainã Almeida" />
+            </StackLayout>
+
+            <controls:CustomButton
+                Grid.Row="5"
+                xct:TouchEffect.NativeAnimation="True"
+                HasIcon="True" />
+
+            <Label
+                Grid.Row="6"
+                xct:TouchEffect.Command="{Binding RegisterCommand}"
+                xct:TouchEffect.NativeAnimation="True"
+                HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="You already have an account? " TextColor="#757575" />
+                        <Span Text="Login" TextColor="#E25E31" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DogLifeChallange.Views.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="Roboto" />
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="FontFamily" Value="Roboto" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <Grid
+            Padding="20"
+            RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto"
+            RowSpacing="15">
+            <Image HeightRequest="150" Source="logo" />
+
+            <Image
+                Grid.Row="1"
+                Aspect="AspectFit"
+                HeightRequest="40"
+                Source="doglife" />
+
+            <StackLayout Grid.Row="2">
+                <Label Text="Email" />
+                <Entry Text="kainafa@hotmail.com" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="3">
+                <Label Text="Password" />
+                <Entry IsPassword="True" Text="kainafa@hotmail.com" />
+            </StackLayout>
+
+            <Label
+                Grid.Row="4"
+                HorizontalOptions="End"
+                Text="Forgot Passwords?" />
+
+            <Frame
+                Grid.Row="5"
+                xct:TouchEffect.Command="{Binding LoginCommand}"
+                xct:TouchEffect.NativeAnimation="True"
+                CornerRadius="6"
+                HasShadow="False">
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                        HorizontalOptions="StartAndExpand"
+                        Text="Login"
+                        TextColor="White" />
+                    <Image HeightRequest="24" Source="bone" />
+                </StackLayout>
+                <Frame.Background>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Offset="0.1" Color="#F58128" />
+                        <GradientStop Offset="1.0" Color="#F92E7C" />
+                    </LinearGradientBrush>
+                </Frame.Background>
+            </Frame>
+
+            <Frame
+                Grid.Row="6"
+                xct:TouchEffect.Command="{Binding LoginFacebookCommand}"
+                xct:TouchEffect.NativeAnimation="True"
+                BackgroundColor="#3C5A99"
+                CornerRadius="6"
+                HasShadow="False">
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                        HorizontalOptions="StartAndExpand"
+                        Text="Login With Facebook"
+                        TextColor="White" />
+                    <Image HeightRequest="24" Source="facebook" />
+                </StackLayout>
+            </Frame>
+
+            <Label
+                Grid.Row="7"
+                xct:TouchEffect.Command="{Binding RegisterCommand}"
+                xct:TouchEffect.NativeAnimation="True"
+                HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="You don't any account?" TextColor="#757575" />
+                        <Span Text="Register" TextColor="#E25E31" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

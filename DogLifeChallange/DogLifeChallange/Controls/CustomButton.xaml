@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Frame
+    x:Class="DogLifeChallange.Controls.CustomButton"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="root"
+    CornerRadius="6"
+    HasShadow="False">
+
+    <StackLayout Orientation="Horizontal">
+        <Label
+            HorizontalOptions="StartAndExpand"
+            Text="Register"
+            TextColor="White">
+            <Label.Triggers>
+                <DataTrigger
+                    Binding="{Binding Source={x:Reference root}, Path=HasIcon}"
+                    TargetType="Label"
+                    Value="False">
+                    <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                </DataTrigger>
+            </Label.Triggers>
+        </Label>
+        <Image
+            x:Name="sourceImage"
+            HeightRequest="24"
+            Source="ic_dog">
+            <Image.Triggers>
+                <DataTrigger
+                    Binding="{Binding Source={x:Reference root}, Path=HasIcon}"
+                    TargetType="Image"
+                    Value="False">
+                    <Setter Property="IsVisible" Value="False" />
+                </DataTrigger>
+            </Image.Triggers>
+        </Image>
+    </StackLayout>
+    <Frame.Background>
+        <LinearGradientBrush EndPoint="1,0">
+            <GradientStop Offset="0.1" Color="#F58128" />
+            <GradientStop Offset="1.0" Color="#F92E7C" />
+        </LinearGradientBrush>
+    </Frame.Background>
+
+</Frame>
