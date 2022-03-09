@@ -30,6 +30,7 @@ namespace DogLifeChallange
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
             containerRegistry.RegisterForNavigation<RegisterPage, RegisterPageViewModel>();
+            containerRegistry.RegisterForNavigation<ForgotPage, ForgotPageViewModel>();
         }
     }
 }

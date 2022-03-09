@@ -12,6 +12,10 @@ namespace DogLifeChallange.ViewModels
         public IAsyncCommand RegisterCommand
             => _registerCommand ?? (_registerCommand = new AsyncCommand(ExecuteRegisterCommand, allowsMultipleExecutions: false));
 
+        private IAsyncCommand _forgotCommand;
+        public IAsyncCommand ForgotCommand
+            => _forgotCommand ?? (_forgotCommand = new AsyncCommand(ExecuteForgotCommand, allowsMultipleExecutions: false));
+
         public LoginPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
@@ -19,6 +23,9 @@ namespace DogLifeChallange.ViewModels
         }
 
         private async Task ExecuteRegisterCommand()
-            => await NavigationService.NavigateAsync($"{nameof(RegisterPage)}");
+            => await NavigationService.NavigateAsync($"{nameof(RegisterPage)}", null, useModalNavigation: true, true);
+
+        private async Task ExecuteForgotCommand()
+            => await NavigationService.NavigateAsync($"{nameof(ForgotPage)}");
     }
 }

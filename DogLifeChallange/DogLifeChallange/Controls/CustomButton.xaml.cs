@@ -41,6 +41,27 @@ namespace DogLifeChallange.Controls
             set { SetValue(SourceImageProperty, value); }
         }
 
+        public static readonly BindableProperty TextProperty =
+            BindableProperty.Create(
+                nameof(Text),
+                typeof(string),
+                typeof(CustomButton),
+                defaultValue: string.Empty,
+                defaultBindingMode: BindingMode.TwoWay,
+                propertyChanged: OnTextPropertyChanged);
+
+        private static void OnTextPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (bindable is CustomButton button && newValue is string text)
+                button.lblText.Text = text;
+
+        }
+
+        public string Text
+        {
+            get { return (string)GetValue(TextProperty); }
+            set { SetValue(TextProperty, value); }
+        }
         public CustomButton()
         {
             InitializeComponent();

@@ -66,7 +66,7 @@
 
             <Label
                 Grid.Row="6"
-                xct:TouchEffect.Command="{Binding RegisterCommand}"
+                xct:TouchEffect.Command="{Binding LoginCommand}"
                 xct:TouchEffect.NativeAnimation="True"
                 HorizontalOptions="Center">
                 <Label.FormattedText>

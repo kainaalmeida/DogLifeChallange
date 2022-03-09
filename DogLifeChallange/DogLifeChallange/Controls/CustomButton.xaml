@@ -9,6 +9,7 @@
 
     <StackLayout Orientation="Horizontal">
         <Label
+            x:Name="lblText"
             HorizontalOptions="StartAndExpand"
             Text="Register"
             TextColor="White">

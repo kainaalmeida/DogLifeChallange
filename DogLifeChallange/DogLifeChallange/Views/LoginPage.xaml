@@ -45,6 +45,8 @@
 
             <Label
                 Grid.Row="4"
+                xct:TouchEffect.Command="{Binding ForgotCommand}"
+                xct:TouchEffect.NativeAnimation="true"
                 HorizontalOptions="End"
                 Text="Forgot Passwords?" />
 
@@ -92,7 +94,7 @@
                 HorizontalOptions="Center">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="You don't any account?" TextColor="#757575" />
+                        <Span Text="You don't any account? " TextColor="#757575" />
                         <Span Text="Register" TextColor="#E25E31" />
                     </FormattedString>
                 </Label.FormattedText>

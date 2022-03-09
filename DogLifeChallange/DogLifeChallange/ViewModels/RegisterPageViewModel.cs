@@ -1,16 +1,23 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Prism.Navigation;
+using System.Threading.Tasks;
+using Xamarin.CommunityToolkit.ObjectModel;
 
 namespace DogLifeChallange.ViewModels
 {
-    public class RegisterPageViewModel : BindableBase
+    public class RegisterPageViewModel : ViewModelBase
     {
-        public RegisterPageViewModel()
+
+        private IAsyncCommand _loginCommand;
+        public IAsyncCommand LoginCommand
+            => _loginCommand ?? (_loginCommand = new AsyncCommand(ExecuteLoginCommand, allowsMultipleExecutions: false));
+
+        public RegisterPageViewModel(INavigationService navigationService)
+            : base(navigationService)
         {
 
         }
+
+        private async Task ExecuteLoginCommand()
+            => await NavigationService.GoBackAsync();
     }
 }

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DogLifeChallange.Views.ForgotPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:DogLifeChallange.Controls"
+    xmlns:prism="http://prismlibrary.com"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    BackgroundColor="white">
+
+    <Grid Padding="20" RowDefinitions="auto,auto,*,auto,auto">
+        <Image
+            Margin="0,20"
+            HeightRequest="150"
+            Source="forgot_image" />
+
+        <Label
+            Grid.Row="1"
+            FontFamily="RobotoMedium"
+            FontSize="Large"
+            HorizontalTextAlignment="Center"
+            Text="Forgot you password?" />
+
+        <Label
+            Grid.Row="2"
+            FontFamily="Roboto"
+            FontSize="Medium"
+            HorizontalTextAlignment="Center"
+            Text="Please enter the email address associated  with your email. We will email you a  link to reset your password." />
+
+        <StackLayout Grid.Row="3">
+            <Label FontFamily="Roboto" Text="Email" />
+            <Entry FontFamily="Roboto" Text="kainafa@hotmail.com" />
+        </StackLayout>
+
+        <controls:CustomButton
+            Grid.Row="4"
+            Margin="0,15,0,0"
+            Text="Send" />
+
+    </Grid>
+
+</ContentPage>

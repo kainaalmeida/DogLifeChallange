@@ -5,10 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\Roboto-Medium.ttf" />
     <None Remove="Fonts\Roboto-Regular.ttf" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Fonts\Roboto-Medium.ttf" />
     <EmbeddedResource Include="Fonts\Roboto-Regular.ttf" />
   </ItemGroup>
 
@@ -21,6 +23,9 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Controls\CustomButton.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ForgotPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\LoginPage.xaml">
